@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DONATO Menú Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="embers"></canvas>
+
+<header class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-inner">
+
+        <div class="hero-logo">
+            <img src="assets/img/logo/logo.png" alt="Donato Empanadas" class="logo">
+        </div>
+
+        <h1>EMPANADAS HORNEADAS</h1>
+
+        <a href="#menu" class="hero-btn">
+            VER MENÚ
+        </a>
+
+    </div>
+
+</header>
+
+<div class="floating-cart-btn" id="cartToggle">
+🛒 <span id="cartCount">0</span>
+</div>
+
+<section id="menu">
+<div class="section-title">NUESTRO MENÚ</div>
+<div class="products" id="products"></div>
+</section>
+
+<aside class="cart" id="cart">
+<div class="cart-header">
+<h2>Tu Pedido</h2>
+<button id="closeCart">✕</button>
+</div>
+<div id="cartItems"></div>
+<div class="cart-footer">
+<div class="total">$ <span id="total">0</span></div>
+<button id="sendOrder">FINALIZAR PEDIDO</button>
+</div>
+</aside>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-brand">
+
+<img
+src="assets/img/logo/logo.png"
+alt="Donato Empanadas"
+class="footer-logo"
+>
+
+<p class="footer-tagline">
+Empanadas Horneadas
+</p>
+
+</div>
+<div class="footer-social">
+
+<a href="#" target="_blank" class="social-link">
+
+<svg viewBox="0 0 32 32" fill="currentColor">
+<path d="M16.001 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.264.592 4.391 1.63 6.235L3.2 28.8l6.736-1.598A12.75 12.75 0 0016 28.8c7.07 0 12.8-5.73 12.8-12.8S23.07 3.2 16.001 3.2zm0 23.273a10.39 10.39 0 01-5.296-1.45l-.38-.226-4 .949.953-3.897-.247-.4a10.368 10.368 0 01-1.58-5.45c0-5.733 4.664-10.4 10.4-10.4 5.734 0 10.4 4.667 10.4 10.4s-4.666 10.4-10.4 10.4zm5.7-7.79c-.312-.156-1.84-.909-2.124-1.012-.286-.104-.494-.156-.702.156-.208.313-.806 1.012-.988 1.22-.182.208-.364.234-.676.078-.312-.156-1.316-.485-2.506-1.546-.926-.826-1.55-1.847-1.732-2.16-.182-.312-.02-.48.136-.636.14-.139.312-.364.468-.546.156-.182.208-.312.312-.52.104-.208.052-.39-.026-.546-.078-.156-.702-1.69-.962-2.315-.252-.606-.509-.524-.702-.534l-.598-.01c-.208 0-.546.078-.832.39s-1.092 1.066-1.092 2.6 1.118 3.014 1.274 3.222c.156.208 2.202 3.362 5.334 4.712.745.322 1.326.514 1.78.658.748.238 1.428.204 1.966.124.6-.09 1.84-.752 2.098-1.48.26-.727.26-1.35.182-1.48-.078-.13-.286-.208-.598-.364z"/>
+</svg>
+
+</a>
+
+<a href="#" target="_blank" class="social-link">
+
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M12 2.2c3.2 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.65.069 4.811 0 3.161-.011 3.545-.069 4.811-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.65.069-4.85.069-3.2 0-3.584-.011-4.85-.069-3.26-.149-4.771-1.699-4.919-4.919-.058-1.266-.069-1.65-.069-4.811 0-3.161.011-3.545.069-4.811C2.379 3.89 3.89 2.35 7.15 2.27 8.416 2.212 8.8 2.2 12 2.2zm0 1.8c-3.154 0-3.522.012-4.769.068-2.334.106-3.397 1.165-3.503 3.503-.056 1.247-.068 1.615-.068 4.429s.012 3.182.068 4.429c.106 2.337 1.169 3.397 3.503 3.503 1.247.056 1.615.068 4.769.068s3.522-.012 4.769-.068c2.334-.106 3.397-1.166 3.503-3.503.056-1.247.068-1.615.068-4.429s-.012-3.182-.068-4.429c-.106-2.338-1.169-3.397-3.503-3.503C15.522 4.012 15.154 4 12 4zm0 3.2A4.8 4.8 0 1112 16.8a4.8 4.8 0 010-9.6zm0 1.8A3 3 0 1012 15a3 3 0 000-6zm5-2.9a1.12 1.12 0 110 2.24 1.12 1.12 0 010-2.24z"/>
+</svg>
+
+</a>
+
+<a href="#" target="_blank" class="social-link">
+
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073c0 6.019 4.388 11.008 10.125 11.927v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.081 24 18.092 24 12.073z"/>
+</svg>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Donato Empanadas Horneadas
+</p>
+
+<p>
+Diseñado y desarrollado por
+<span>NG Software</span>
+</p>
+
+</div>
+
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
