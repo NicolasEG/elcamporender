@@ -1,69 +1,117 @@
 const products = [
 
 {
-name:'Carne',
-price:2000,
-img:'assets/img/productos/carne.png'
+name:'Maíz Entero 30 Kg',
+price:14000,
+img:'assets/img/productos/maiz-entero.png'
 },
 
 {
-name:'Pollo',
-price:2000,
-img:'assets/img/productos/pollo.png'
+name:'Maíz Grueso / Quebrado Fino 24 Kg',
+price:16000,
+img:'assets/img/productos/maiz-quebrado.png'
 },
 
 {
-name:'Jamón y Muzza',
-price:2000,
-img:'assets/img/productos/jyq.png'
+name:'Mezcla para Gallina 24 Kg',
+price:15500,
+img:'assets/img/productos/mezcla-gallina.png'
 },
 
 {
-name:'Cebolla y Muzza',
-price:2000,
-img:'assets/img/productos/cym.png'
+name:'Arroz Saborizado para Perro 15 Kg',
+price:17500,
+img:'assets/img/productos/arroz-perro.png'
 },
 
 {
-name:'Roquefort y Muzza',
-price:2000,
-img:'assets/img/productos/rym.png'
+name:'Piedritas Sanitarias para Gato 25 Kg',
+price:14000,
+img:'assets/img/productos/piedritas.png'
 },
 
 {
-name:'Capresse',
-price:2000,
-img:'assets/img/productos/capresse.png'
+name:'Sabrosito Adulto 20 Kg',
+price:35000,
+img:'assets/img/productos/sabrosito.png'
 },
 
 {
-name:'Humita',
-price:2000,
-img:'assets/img/productos/humita.png'
+name:'Nutricare Perro Adulto 20 Kg',
+price:45000,
+img:'assets/img/productos/nutricare-adulto.png'
 },
 
 {
-name:'Espinaca',
-price:2000,
-img:'assets/img/productos/espinaca.png'
+name:'Nutricare Perro Cachorro 15 Kg',
+price:41000,
+img:'assets/img/productos/nutricare-cachorro.png'
 },
 
 {
-name:'Calabaza',
-price:2000,
-img:'assets/img/productos/calabaza.png'
+name:'Ultra Mix Gato 10 Kg',
+price:25000,
+img:'assets/img/productos/ultramix-gato.png'
 },
 
 {
-name:'Calabresa',
-price:2000,
-img:'assets/img/productos/calabresa.png'
+name:'Bolsa de Carbón 5 Kg',
+price:4000,
+img:'assets/img/productos/carbon-5kg.png'
 },
 
 {
-name:'Fatay Árabe',
-price:2500,
-img:'assets/img/productos/fatay.png'
+name:'Leña Eucalipto',
+price:0,
+img:'assets/img/productos/lena.png'
+},
+
+{
+name:'Carbón',
+price:0,
+img:'assets/img/productos/carbon.png'
+},
+
+{
+name:'Alimento Balanceado',
+price:0,
+img:'assets/img/productos/alimento-balanceado.png'
+},
+
+{
+name:'Maíz',
+price:0,
+img:'assets/img/productos/maiz.png'
+},
+
+{
+name:'Alimento para Conejos',
+price:0,
+img:'assets/img/productos/conejos.png'
+},
+
+{
+name:'Alimento para Aves',
+price:0,
+img:'assets/img/productos/aves.png'
+},
+
+{
+name:'Alimento para Perros',
+price:0,
+img:'assets/img/productos/perros.png'
+},
+
+{
+name:'Alimento para Gatos',
+price:0,
+img:'assets/img/productos/gatos.png'
+},
+
+{
+name:'Polirrubro',
+price:0,
+img:'assets/img/productos/polirrubro.png'
 }
 
 ];
@@ -89,7 +137,7 @@ productsEl.innerHTML += `
 <h3>${p.name}</h3>
 
 <div class="price">
-$${p.price.toLocaleString('es-AR')}
+${p.price > 0 ? `$${p.price.toLocaleString('es-AR')}` : 'Consultar'}
 </div>
 
 </div>
@@ -144,7 +192,7 @@ if(qty <= 0) return;
 
 const product = products[index];
 
-const subtotal = product.price * qty;
+const subtotal = product.price > 0 ? product.price * qty : 0;
 
 total += subtotal;
 totalItems += qty;
@@ -157,11 +205,11 @@ ${product.name}
 </div>
 
 <div class="item-data">
-${qty} x $${product.price.toLocaleString('es-AR')}
+${qty} x ${product.price > 0 ? '$' + product.price.toLocaleString('es-AR') : 'Consultar'}
 </div>
 
 <div class="item-subtotal">
-$${subtotal.toLocaleString('es-AR')}
+${product.price > 0 ? '$' + subtotal.toLocaleString('es-AR') : 'Consultar'}
 </div>
 
 </div>
