@@ -60,59 +60,6 @@ price:4000,
 img:'assets/img/productos/carbon-5kg.png'
 },
 
-{
-name:'Leña Eucalipto',
-price:0,
-img:'assets/img/productos/lena.png'
-},
-
-{
-name:'Carbón',
-price:0,
-img:'assets/img/productos/carbon.png'
-},
-
-{
-name:'Alimento Balanceado',
-price:0,
-img:'assets/img/productos/alimento-balanceado.png'
-},
-
-{
-name:'Maíz',
-price:0,
-img:'assets/img/productos/maiz.png'
-},
-
-{
-name:'Alimento para Conejos',
-price:0,
-img:'assets/img/productos/conejos.png'
-},
-
-{
-name:'Alimento para Aves',
-price:0,
-img:'assets/img/productos/aves.png'
-},
-
-{
-name:'Alimento para Perros',
-price:0,
-img:'assets/img/productos/perros.png'
-},
-
-{
-name:'Alimento para Gatos',
-price:0,
-img:'assets/img/productos/gatos.png'
-},
-
-{
-name:'Polirrubro',
-price:0,
-img:'assets/img/productos/polirrubro.png'
-}
 
 ];
 
